@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎬 Movie Finder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎬 Movie Finder</h1>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search for a movie..." />
+      <button id="searchBtn">Search</button>
+    </div>
+    <button id="toggleFavorites" class="toggle-fav-btn">⭐ View Favorites</button>
+
+<div id="favoritesPanel" class="favorites-panel hidden">
+  <h2>Your Favorites</h2>
+  <div id="favoritesList" class="movies-list"></div>
+</div>
+
+    <div id="spinner" class="spinner hidden"></div>
+    <div id="error" class="error"></div>
+    <div id="moviesList" class="movies-list"></div>
+    <div id="pagination"></div>
+  </div>
+
+  <!-- Movie Details Modal -->
+  <div id="movieModal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <div id="modalDetails"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
