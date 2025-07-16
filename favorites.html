@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>⭐ Favorite Movies</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>⭐ Favorite Movies</h1>
+    <div id="favoritesList" class="movies-list"></div>
+    <a href="index.html" class="fav-link">🔙 Back to Search</a>
+  </div>
+
+  <script>
+    const favoritesList = document.getElementById("favoritesList");
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (favorites.length === 0) {
+      favoritesList.innerHTML = "<p style='color:#bbb'>No favorites added yet.</p>";
+    } else {
+      favoritesList.innerHTML = favorites.map(movie => `
+        <div class="movie" onclick="window.open('https://www.imdb.com/title/${movie.imdbID}', '_blank')">
+          <img src="https://img.omdbapi.com/?i=${movie.imdbID}&apikey=e0ed588e" alt="${movie.title}">
+          <h3>${movie.title}</h3>
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+</html>
